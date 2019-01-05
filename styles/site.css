@@ -1,0 +1,288 @@
+h2 {
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    font-weight: bold;
+}
+
+input {
+    width: 200px;
+    height: 37px;
+}
+
+select {
+    width: 200px;
+    height: 37px;
+}
+
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.formal {
+    padding: 100px 20px 50px 20px;
+}
+
+.card {
+    height: 100%;
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.slikaVoglasu {
+    width: 100%;
+    height: auto;
+}
+
+.paddings {
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.indexpaddings {
+    padding-top: 75px;
+}
+
+.halfpaddings {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.logo {
+    max-width: 200px;
+    max-height: 100px;
+}
+
+/*footer*/
+.footer {
+    background-color: grey;
+    color: #ffffff;
+    margin-bottom: -20px;
+    border-bottom: 0;
+}
+
+.rights {
+    padding-bottom: 10px;
+}
+
+.privacy {
+    color: #ffffff !important;
+    text-align: right;
+    float: right;
+}
+
+.aboutmin {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.53;
+    letter-spacing: 0.8px;
+    color: #0e1e30;
+}
+
+.story {
+    background-image: url(../images/story.png);
+    color: #ffffff;
+    padding: 50px 54px 128px 50px;
+    background-size: cover;
+}
+
+.nums {
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 2.8px;
+    text-align: center;
+    color: #0e1e30;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.storiesheading {
+    font-size: 35px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.69;
+    letter-spacing: 1.8px;
+    color: #ffffff;
+    padding-bottom: 50px;
+}
+
+.stories {
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.support {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    color: #0e1e30;
+}
+
+.support-red {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    color: #ed1c24;
+}
+
+.supportmin {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    color: #0e1e30;
+}
+
+.red-termstext {
+    font-weight: 500;
+    color: #ed1c24;
+}
+
+.red {
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    color: #ed1c24;
+}
+
+#map {
+   background-image: url(../images/googlemaps.png);
+   width:auto;
+}
+
+.effective {
+    font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: #0e1e30;
+}
+
+.title2 {
+    font-size: 35px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 0.69;
+    letter-spacing: 1.8px;
+    color: #0e1e30;
+    padding-bottom: 50px;
+}
+
+.termstext {
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: 1px;
+    color: #0e1e30;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.ista {
+    white-space: nowrap;
+    display: inline;
+}
+
+.clients {
+    padding: 20px 0 20px 0;
+    background-color: rgba(178, 183, 187, 0.1);
+}
+
+.cli {
+    text-align: center;
+    padding: 60px 0 60px 0;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    transition: all 0.6s 0.6s;
+}
+
+.title2 {
+    text-align: left;
+}
+
+.registracija {
+    color: pink !important;
+}
+
+.priodjava {
+    color: dodgerblue !important;
+}
+
+.geslo {
+    color: red !important;
+}
+
+.desno {
+    text-align: right;
+}
