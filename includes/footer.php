@@ -1,25 +1,56 @@
-<div class="jumbotron footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <a href="/AvtoZAG"><img class="logo" src="images/logo.png" alt="AvtoZag" /></a>
+<footer id="main-footer">
+    <div class="footer-info-wrap">
+
+        <div class="row footer-info">
+
+            <div class="col-four tab-full">
+                <h4><i class="icon-location-map-1"></i> Where to Find Us</h4>
+
+                <p>
+                    1600 Amphitheatre Parkway<br>
+                    Mountain View, CA<br>
+                    94043 US
+                </p>
             </div>
-            <div style="text-align:center; color: darkslategray" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-6 rights">
-                &copy; 2019 Avto.zag. Vse pravice pridržane. <br/>
-                Kontaktni mail: info@avto.zag. <br/>
-                Avto.zag, prodaja in nakup vozil d.o.o.
+
+            <div class="col-four tab-full collapse">
+                <h4><i class="icon-phone-incoming"></i> Kontakt</h4>
+
+                <p>aljosa.sikosek@gmail.com<br>
+                    info@scrumtable.com <br>
+                    Phone: (+386) 40 000 444
+                </p>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-6 privacy">
-                <br/>
-                <a class="privacy" href="privacy.php">Pogoji in pravno obvestilo</a>
+
+            <div class="col-four tab-full">
+                <h4><i class="icon-organization-hierarchy-3"></i> Company Links</h4>
+
+                <ul class="footer-link-list">
+                    <li><a href="#">Company Journal</a></li>
+                    <li><a href="#">Product Support</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
             </div>
+
+        </div>
+    </div> <!-- /footer-info-wrap -->
+
+    <div class="footer-bottom">
+
+        <div class="copyright">
+            <span>© Copyright ScrumTable 2019.</span>
         </div>
     </div>
-</div>
 
+</footer>
+
+<div id="preloader">
+        <div id="loader"></div>
+    </div>
     <script src="scripts/site.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>

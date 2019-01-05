@@ -2,65 +2,80 @@
 session_start();
 
 if (!isset($page_title)) {
-    $page_title = 'Avto.zag';
+    $page_title = 'ScrumTable';
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
+
+    <!--- basic page needs
+    ================================================== -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ScrumTable</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $page_title; ?></title>
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
 
-    <link rel="stylesheet" type="text/css" href="styles/site.css">
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
 
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- favicons
+     ================================================== -->
+    <link rel="icon" type="image/png" href="favicon.png">
 
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/AvtoZAG"><img class="logo" src="images/logo.png"/> </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-<?php
+<body id="top">
+<header class="main-header">
 
-echo   '<li class="nav-item">
-            <a class="nav-link" href="/AvtoZAG">Domov<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/AvtoZAG/about.php">O nas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/AvtoZAG/list.php">Seznam vozil</a>
-        </li>';
+    <div class="logo">
+        <a href="/ScrumTable">ScrumTable</a>
+    </div>
 
-if (isset($_SESSION['ime'])) {
+    <a class="menu-toggle" href="#"><span>Menu</span></a>
 
-	echo '<li class="nav-item"><a class="nav-link" href="/AvtoZAG/addProject.php">Dodaj vozilo</a></li>
-	    <li class="nav-item"><a class="nav-link" href="/AvtoZAG/posted.php?idUporabnik=' . $_SESSION['idUporabnik'] . '">Moji oglasi</a></li>
-        <li class="nav-item"><a class="nav-link geslo" href="/AvtoZAG/changePassword.php">Spremeni geslo</a></li>
-        <li class="nav-item"><a class="nav-link priodjava" href="/AvtoZAG/logout.php">Odjava</a></li>';
-}
-else {
-	echo '<li class="nav-item"><a class="nav-link registracija" href="/AvtoZAG/register.php">Registracija</a></li>
-	<li class="nav-item"><a class="nav-link priodjava" href="/AvtoZAG/login.php">Prijava</a></li>';
-}
-?>
-                </ul>
-            </div>
-        </div>
-    </nav>
+</header>
+
+<nav id="menu-nav-wrap">
+
+    <h3>Navigacija</h3>
+    <ul class="nav-list">
+
+        <?php
+
+        echo   '<li><a class="smoothscroll" href="#intro" title="">Domov</a></li>
+        <li><a class="smoothscroll" href="#features" title="">O nas</a></li>';
+
+        if (isset($_SESSION['ime'])) {
+
+            echo '<li><a class="smoothscroll" href="/ScrumTable/addProject.php" title="">Dodaj projekt</a></li>
+        <li><a class="smoothscroll" href="/ScrumTable/myProjects.php" title="">Moji projekti</a></li>
+        <li><a class="smoothscroll" href="/ScrumTable/logout.php" title="">Odjava</a></li>
+        </ul>';
+        }
+        else {
+            echo '</ul>           
+                <div class="action">
+                    <a class="button" href="/ScrumTable/register.php">Registracija</a>
+                </div>
+                <div class="action">
+                    <a class="button" href="/ScrumTable/login.php">Prijava</a>
+                </div>';
+        }
+        ?>
+
+</nav>

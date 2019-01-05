@@ -3,9 +3,7 @@
 DEFINE ('DB_USER', 'root');
 DEFINE ('DB_PASSWORD', '');
 DEFINE ('DB_HOST', 'localhost');
-DEFINE ('DB_NAME', 'avtozag');
-DEFINE ('DB_USER_TBL', 'uporabnik');
-
+DEFINE ('DB_NAME', 'scrumtable');
 
 $dbc = @mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
