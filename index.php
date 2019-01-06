@@ -6,156 +6,127 @@ include('includes/header.php');
 
 ?>
 
-
-
-
-	<!-- main content wrap
-   ================================================== -->
    <div id="main-content-wrap">
-
-
-		<!-- main content wrap
-   	================================================== -->
    	<section id="intro">
-
-		   <!-- <div class="shadow-overlay"></div> -->
-		   
 		   <div class="row intro-content">
 		   	<div class="col-twelve">
-
-		   		<h3 class="animate-intro">Introducing Elevate</h3>
-			  		
+		   		<h3 class="animate-intro">Lažje življenje s</h3>
 					<h1 class="animate-intro">
-						The perfect template to
-						present your awesome product.
-					</h1>	
-					
+						SCRUM TABLE
+					</h1>
 					<div class="buttons">
-						<a class="button stroke smoothscroll animate-intro" href="#features" title="">Features</a>
-						<a class="button stroke smoothscroll animate-intro" href="#download" title="">Download</a>
-					</div>					
+						<a class="button stroke smoothscroll animate-intro" href="#features" title="">O nas</a>
+						<a class="button stroke smoothscroll animate-intro" href="#download" title="">Registracija</a>
+					</div>
+					<img src="images/app-screenshot-big.jpg" alt="" class="animate-intro">
+            </div>
+       </div>
+    </section>
 
-					<img src="images/app-screenshot-big.jpg" alt="" class="animate-intro">   			
+    <section id="features">
+        <div class="row section-intro group animate-this">
+            <div class="col-twelve with-bottom-line">
+            <h2 class="">Features You'll Love.</h2>
 
-			  	</div> <!-- /twelve --> 		   			
-		   </div> <!-- /row -->   
+            <p class="lead">Lorem ipsum Tempor do Excepteur nulla aute deserunt reprehenderit aute commodo aliquip laboris velit eu esse exercitation ex fugiat pariatur aute consequat. Lorem ipsum Fugiat mollit quis qui. Lorem ipsum Duis Excepteur Duis magna fugiat incididunt qui id quis dolor nisi irure proident labore ut in incididunt eiusmod est anim.</p>
+            </div>
+        </div>
 
-		</section> <!-- /intro -->
+        <div class="row features-wrap">
 
+            <div class="features-list block-1-3 block-s-1-2 block-tab-full">
 
-		<!-- features
-   	================================================== -->
-		<section id="features">
+                <div class="bgrid feature animate-this">
 
-			<div class="row section-intro group animate-this">	
-	   		<div class="col-twelve with-bottom-line">
+                    <span class="feature-count">01.</span>
 
-	   			<h2 class="">Features You'll Love.</h2>
+                   <div class="feature-content">
 
-	   			<p class="lead">Lorem ipsum Tempor do Excepteur nulla aute deserunt reprehenderit aute commodo aliquip laboris velit eu esse exercitation ex fugiat pariatur aute consequat. Lorem ipsum Fugiat mollit quis qui. Lorem ipsum Duis Excepteur Duis magna fugiat incididunt qui id quis dolor nisi irure proident labore ut in incididunt eiusmod est anim.</p>
+                <h3>Fully Resposive</h3>
 
-	   		</div>   		
-	   	</div>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                       </p>
 
-			<div class="row features-wrap">
-					     		
-				<div class="features-list block-1-3 block-s-1-2 block-tab-full">
+                    </div>
 
-					<div class="bgrid feature animate-this">	
+                </div> <!-- /bgrid -->
 
-						<span class="feature-count">01.</span>            
+                <div class="bgrid feature animate-this">
 
-					   <div class="feature-content">
+                    <span class="feature-count">02.</span>
 
-              	   	<h3>Fully Resposive</h3>
+                   <div class="feature-content">
 
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-						   </p>
-						         		
-						</div> 	         	 
+                <h3>Retina Ready</h3>
 
-					</div> <!-- /bgrid -->
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                       </p>
 
-					<div class="bgrid feature animate-this">	
+                    </div>
 
-						<span class="feature-count">02.</span>            
+                </div> <!-- /bgrid -->
 
-					   <div class="feature-content">
+                <div class="bgrid feature animate-this">
 
-              	   	<h3>Retina Ready</h3>
+                    <span class="feature-count">03.</span>
 
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-						   </p>
-						         		
-						</div> 	         	 
+                   <div class="feature-content">
 
-					</div> <!-- /bgrid -->
+                <h3>Stylish Design</h3>
 
-					<div class="bgrid feature animate-this">	
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                       </p>
 
-						<span class="feature-count">03.</span>            
+                    </div>
 
-					   <div class="feature-content">
+                </div> <!-- /bgrid -->
 
-              	   	<h3>Stylish Design</h3>
+                <div class="bgrid feature animate-this">
 
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-						   </p>
-						         		
-						</div> 	         	 
+                    <span class="feature-count">04.</span>
 
-					</div> <!-- /bgrid -->
+                   <div class="feature-content">
 
-					<div class="bgrid feature animate-this">	
+                <h3>Clean Code</h3>
 
-						<span class="feature-count">04.</span>            
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                       </p>
 
-					   <div class="feature-content">
+                    </div>
 
-              	   	<h3>Clean Code</h3>
+                </div> <!-- /bgrid -->
 
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-						   </p>
-						         		
-						</div> 	         	 
+                <div class="bgrid feature animate-this">
 
-					</div> <!-- /bgrid -->
+                    <span class="feature-count">05.</span>
 
-					<div class="bgrid feature animate-this">	
+                   <div class="feature-content">
 
-						<span class="feature-count">05.</span>            
+                <h3>Easy To Customize</h3>
 
-					   <div class="feature-content">
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                       </p>
 
-              	   	<h3>Easy To Customize</h3>
+                    </div>
 
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-						   </p>
-						         		
-						</div> 	         	 
+                </div> <!-- /bgrid -->
 
-					</div> <!-- /bgrid -->
+                <div class="bgrid feature animate-this">
 
-					<div class="bgrid feature animate-this">	
+                    <span class="feature-count">06.</span>
 
-						<span class="feature-count">06.</span>            
+                   <div class="feature-content">
 
-					   <div class="feature-content">
+                <h3>Free of Charge</h3>
 
-              	   	<h3>Free of Charge</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                       </p>
 
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-						   </p>
-						         		
-						</div> 	         	 
-
-					</div> <!-- /bgrid -->
-
-				</div> <!-- /features-list --> 				
-
-			</div> <!-- /features-wrap -->
-			
-		</section> <!-- /features -->
+                    </div>
+                </div> <!-- /bgrid -->
+            </div> <!-- /features-list -->
+        </div> <!-- /features-wrap -->
+    </section> <!-- /features -->
 
 
 		<!-- infos

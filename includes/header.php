@@ -10,32 +10,22 @@ if (!isset($page_title)) {
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-
-    <!--- basic page needs
-    ================================================== -->
     <meta charset="utf-8">
     <title>ScrumTable</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- mobile specific metas
-    ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- CSS
-  ================================================== -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="styles/site.css">
 
-    <!-- script
-    ================================================== -->
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
 
-    <!-- favicons
-     ================================================== -->
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="includes/favicon.png">
 
 </head>
 
@@ -51,8 +41,7 @@ if (!isset($page_title)) {
 </header>
 
 <nav id="menu-nav-wrap">
-
-    <h3>Navigacija</h3>
+    <h3>NAVIGACIJA</h3>
     <ul class="nav-list">
 
         <?php
@@ -62,9 +51,9 @@ if (!isset($page_title)) {
 
         if (isset($_SESSION['ime'])) {
 
-            echo '<li><a class="smoothscroll" href="/ScrumTable/addProject.php" title="">Dodaj projekt</a></li>
-        <li><a class="smoothscroll" href="/ScrumTable/myProjects.php" title="">Moji projekti</a></li>
-        <li><a class="smoothscroll" href="/ScrumTable/logout.php" title="">Odjava</a></li>
+            echo '<li><a href="/ScrumTable/addProject.php" title="">Dodaj projekt</a></li>
+        <li><a href="/ScrumTable/myProjects.php" title="">Moji projekti</a></li>
+        <li><a href="/ScrumTable/logout.php" title="">Odjava</a></li>
         </ul>';
         }
         else {

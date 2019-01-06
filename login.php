@@ -6,21 +6,27 @@ include('includes/header.php');
 
 ?>
 
-    <div class="container formal">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 data-aos="fade-up" >Prijava uporabnika</h1> </br></br>
-                <form action="login.php" method="post">
-                    <fieldset>
-                        <p data-aos="fade-up" ><label>Email:</label> <input type="text" name="email" size="20" maxlength="60" /></p>
-                        <p data-aos="fade-up" ><label>Geslo:</label> <input type="password" name="geslo" size="30" maxlength="30" /></p>
-                        </br>
-                        <div data-aos="fade-up" ><input class="btn btn-primary" type="submit" name="submit" value="Prijava" /></div>
-                    </fieldset>
-                </form>
+    <div id="main-content-wrap">
+        <section id="intro">
+            <div class="row intro-content">
+                <div class="col-twelve">
+                    <h1 class="animate-intro">
+                        Prijava uporabnika
+                    </h1>
+                    <div class="buttons">
+                        <form action="login.php" method="POST">
+                            <fieldset>
+                                <input class="formal" style="width: 100%" type="text" name="email" placeholder="Vnesite svoj email" /> <br/>
+                                <input class="formal" style="width: 100%" type="password" name="geslo" placeholder="Vnesite svoje geslo" />
+                            </fieldset>
+                            <input class="btn btn-primary" type="submit" name="submit" value="Prijava" />
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
+
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require (MYSQL);
