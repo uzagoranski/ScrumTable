@@ -29,8 +29,8 @@ echo '
 						Hvala za obisk. 
 					</h1>
 					<div class="buttons">
-						<a class="button stroke smoothscroll animate-intro" href="/ScrumTable/" title="">Vrni me domov</a>
-						<a class="button stroke smoothscroll animate-intro" href="/ScrumTable/login.php" title="">Ponovna prijava</a>
+						<a class="button stroke animate-intro" href="/ScrumTable/" title="">Vrni me domov</a>
+						<a class="button stroke animate-intro" href="/ScrumTable/login.php" title="">Ponovna prijava</a>
 					</div>
             </div>
        </div>

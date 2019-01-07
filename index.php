@@ -16,7 +16,7 @@ include('includes/header.php');
 					</h1>
 					<div class="buttons">
 						<a class="button stroke smoothscroll animate-intro" href="#features" title="">Funkcionalnosti</a>
-						<a class="button stroke smoothscroll animate-intro" href="#download" title="">Registracija</a>
+						<a class="button stroke smoothscroll animate-intro" href="#testimonials" title="">Mnenja uporabnikov</a>
 					</div>
 					<img src="images/app-screenshot-big.jpg" alt="" class="animate-intro">
             </div>
@@ -45,6 +45,7 @@ include('includes/header.php');
                 <h3>Dodajanje projektov</h3>
 
                         <p>
+                            Funkcionalnost bo omogočala prijavljenim uporabnikom dodajanje novega projekta. S tem se bo ustvarila SCRUM tabla, kamor bo mogoče dodajati posamezne sprinte (iteracije), na sprinte pa bo uporabnik vezal taske (naloge). Tipično bo tabla enega sprinta razdeljena na segmente »To-Do«, »In progress«, »Done«. Ko bo se stanje posameznega taska spremenilo, bo ga uporabnik lahko premaknil v naslednji segment.
                        </p>
 
                     </div>
@@ -60,6 +61,7 @@ include('includes/header.php');
                 <h3>Dodajanje sprintov</h3>
 
                         <p>
+                            Funkcionalnost bo omogočala prijavljenim uporabnikom dodajanje novega projekta. S tem se bo ustvarila SCRUM tabla, kamor bo mogoče dodajati posamezne sprinte (iteracije), na sprinte pa bo uporabnik vezal taske (naloge). Tipično bo tabla enega sprinta razdeljena na segmente »To-Do«, »In progress«, »Done«. Ko bo se stanje posameznega taska spremenilo, bo ga uporabnik lahko premaknil v naslednji segment.
                        </p>
 
                     </div>
@@ -75,6 +77,7 @@ include('includes/header.php');
                 <h3>Dodajanje taskov</h3>
 
                         <p>
+                            Funkcionalnost bo omogočala prijavljenim uporabnikom dodajanje novega projekta. S tem se bo ustvarila SCRUM tabla, kamor bo mogoče dodajati posamezne sprinte (iteracije), na sprinte pa bo uporabnik vezal taske (naloge). Tipično bo tabla enega sprinta razdeljena na segmente »To-Do«, »In progress«, »Done«. Ko bo se stanje posameznega taska spremenilo, bo ga uporabnik lahko premaknil v naslednji segment.
                        </p>
 
                     </div>
@@ -90,6 +93,7 @@ include('includes/header.php');
                 <h3>Prijava in registracija</h3>
 
                         <p>
+                            V tem segmentu se bo implementirala logika za registracijo in prijavo v sistem. Za registracijo bodo potrebni ime, priimek, e-mail, geslo ter uporabniško ime, za prijavo pa uporabniško ime in geslo. Po uspešni registraciji se bo na zapisan e-naslov poslal mail s potrditvijo registracije. Vsi podatki se bodo hranili v podatkovni bazi, administrator pa bo lahko uporabnike tudi brisal.
                        </p>
 
                     </div>
@@ -102,9 +106,10 @@ include('includes/header.php');
 
                    <div class="feature-content">
 
-                <h3>Nastavitev "deadline-a"</h3>
+                <h3>Nastavitev "deadline-a" & obtežitev taskov</h3>
 
                         <p>
+                            K vsakemu projektu bo možno dodajati druge uporabnike, ki sodelujejo pri delu v skupini. Vsakemu od dodanih uporabnikov bo omogočeno kreiranje taskov,  dodeljevanje taskov vsem sodelujočim uporabnikom, dodajanje rokov (angl. »deadline«) posameznega taska in obteževanje glede na časovno zahtevnost.
                        </p>
 
                     </div>
@@ -117,9 +122,10 @@ include('includes/header.php');
 
                    <div class="feature-content">
 
-                <h3>Obtežitev taskov</h3>
+                <h3>Dodajanje datotek po končanem tasku</h3>
 
                         <p>
+                            Ko bo uporabnik zaključil delo na posameznem tasku in ga prestavil v segment »Done«, mu bo omogočeno dodajanje dokumenta za lažje sledenje opravljenega dela. Po dodajanju dokumenta bo se le-ta shranil v podatkovno bazo kot BLOB datoteka. Do dokumentov bodo lahko dostopali vsi sodelujoči v sprintu, v katerem je bil dodan dokument.
                        </p>
 
                     </div>
@@ -169,7 +175,7 @@ include('includes/header.php');
 	   </section> <!-- /testimonials -->
 
 
-   
+
    </div> <!-- /main-content-wrap -->
 
 <?php include('includes/footer.php'); ?>

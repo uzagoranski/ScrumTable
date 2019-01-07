@@ -47,14 +47,18 @@ if (!isset($page_title)) {
         <?php
 
         echo   '<li><a class="smoothscroll" href="#intro" title="">Domov</a></li>
-        <li><a class="smoothscroll" href="#features" title="">O nas</a></li>';
+        <li><a class="smoothscroll" href="#features" title="">Funkcionalnosti</a></li>';
 
         if (isset($_SESSION['ime'])) {
 
-            echo '<li><a href="/ScrumTable/addProject.php" title="">Dodaj projekt</a></li>
-        <li><a href="/ScrumTable/myProjects.php" title="">Moji projekti</a></li>
-        <li><a href="/ScrumTable/logout.php" title="">Odjava</a></li>
-        </ul>';
+            echo '<li><a href="/ScrumTable/myProjects.php" title="">Moji projekti</a></li>
+        </ul>
+        <div class="action">
+            <a class="button" href="/ScrumTable/addProject.php">Nov projekt</a>
+        </div>
+        <div class="action">
+            <a class="button" href="/ScrumTable/logout.php">Odjava</a>
+        </div>';
         }
         else {
             echo '</ul>           
