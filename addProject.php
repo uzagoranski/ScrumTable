@@ -6,7 +6,7 @@ include('includes/header.php');
 
 require(MYSQL);
 
-$query = "SELECT * FROM znamka WHERE status=1 ORDER BY znamka ASC";
+$query = "SELECT * FROM projekt";
 $r = mysqli_query($dbc, $query) or trigger_error("Query: $query\n<br />MySQL Error: " . mysqli_error($dbc));
 
 
@@ -19,7 +19,7 @@ if (isset($_SESSION['ime'])) {
     echo '<div class="container formal">
         <div class="row">
             <div class="col-md-12">
-                <h1>Dodajanje oglasa</h1> </br></br>
+                <h1>Dodajanje projekta</h1> </br></br>
                 <form action="addProject.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <p><label>Naziv:</label> <input type="text" name="naziv" size="50" maxlength="60"/></p>   
