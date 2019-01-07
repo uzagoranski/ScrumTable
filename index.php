@@ -15,7 +15,7 @@ include('includes/header.php');
 						SCRUM TABLE
 					</h1>
 					<div class="buttons">
-						<a class="button stroke smoothscroll animate-intro" href="#features" title="">O nas</a>
+						<a class="button stroke smoothscroll animate-intro" href="#features" title="">Funkcionalnosti</a>
 						<a class="button stroke smoothscroll animate-intro" href="#download" title="">Registracija</a>
 					</div>
 					<img src="images/app-screenshot-big.jpg" alt="" class="animate-intro">
@@ -26,9 +26,9 @@ include('includes/header.php');
     <section id="features">
         <div class="row section-intro group animate-this">
             <div class="col-twelve with-bottom-line">
-            <h2 class="">Features You'll Love.</h2>
+            <h2 class="">Funkcionalnosti.</h2>
 
-            <p class="lead">Lorem ipsum Tempor do Excepteur nulla aute deserunt reprehenderit aute commodo aliquip laboris velit eu esse exercitation ex fugiat pariatur aute consequat. Lorem ipsum Fugiat mollit quis qui. Lorem ipsum Duis Excepteur Duis magna fugiat incididunt qui id quis dolor nisi irure proident labore ut in incididunt eiusmod est anim.</p>
+            <p class="lead">Vse funkcionalnosti katere vam nudimo.</p>
             </div>
         </div>
 
@@ -42,9 +42,9 @@ include('includes/header.php');
 
                    <div class="feature-content">
 
-                <h3>Fully Resposive</h3>
+                <h3>Dodajanje projektov</h3>
 
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        <p>
                        </p>
 
                     </div>
@@ -57,9 +57,9 @@ include('includes/header.php');
 
                    <div class="feature-content">
 
-                <h3>Retina Ready</h3>
+                <h3>Dodajanje sprintov</h3>
 
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        <p>
                        </p>
 
                     </div>
@@ -72,9 +72,9 @@ include('includes/header.php');
 
                    <div class="feature-content">
 
-                <h3>Stylish Design</h3>
+                <h3>Dodajanje taskov</h3>
 
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        <p>
                        </p>
 
                     </div>
@@ -87,9 +87,9 @@ include('includes/header.php');
 
                    <div class="feature-content">
 
-                <h3>Clean Code</h3>
+                <h3>Prijava in registracija</h3>
 
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        <p>
                        </p>
 
                     </div>
@@ -102,9 +102,9 @@ include('includes/header.php');
 
                    <div class="feature-content">
 
-                <h3>Easy To Customize</h3>
+                <h3>Nastavitev "deadline-a"</h3>
 
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        <p>
                        </p>
 
                     </div>
@@ -117,9 +117,9 @@ include('includes/header.php');
 
                    <div class="feature-content">
 
-                <h3>Free of Charge</h3>
+                <h3>Obtežitev taskov</h3>
 
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        <p>
                        </p>
 
                     </div>
@@ -129,6 +129,7 @@ include('includes/header.php');
     </section> <!-- /features -->
 
 
+<<<<<<< HEAD
 		<!-- infos
    	================================================== -->
    	<section id="infos">
@@ -297,6 +298,8 @@ include('includes/header.php');
    	================================================== -->
 
 
+=======
+>>>>>>> 7780fbe912a6db065beba7ee125e282c1e86d069
 	   <!-- testimonials
    	================================================== -->
 	   <section id="testimonials">
@@ -304,22 +307,22 @@ include('includes/header.php');
 	   		<div class="col-twelve">
 
 	   			<h2 class="h01 animate-this">
-                  Hear What Our Customers Say.
+                  Kaj naše stranke pravijo o nas.
                </h2>
 
 					<div id="testimonial-slider" class="flexslider animate-this">
 						<ul class="slides">	
 						   <li>
-							  	<p>&ldquo;Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.&rdquo;</p>
-							  	<p class="author-info">&mdash; Steve Jobs</p>
+							  	<p>&ldquo;Inovacija na svojem področju.&rdquo;</p>
+							  	<p class="author-info">&mdash; Marko Zemljarič</p>
 							</li>						
 							<li>
-								<p>&ldquo;Good design is as little design as possible. Less, but better - because it concentrates on the essential aspects, and the products are not burdened with non-essentials. Back to purity, back to simplicity..&rdquo;</p>
-								<p class="author-info">&mdash; Dieter Rams</p>
+								<p>&ldquo;Rešujete življenja!&rdquo;</p>
+								<p class="author-info">&mdash; Gašper Reher</p>
 							</li>						
 							<li>
-							  	<p>&ldquo;A fundamental part of that is making mistakes together. There's no learning without trying lots of ideas and failing lots of times.&rdquo;</p>
-							  	<p class="author-info">&mdash; Jony Ive</p>
+							  	<p>&ldquo;Moja družina je veliko bolj vesela, zdaj, ko imam toliko časa za njih.&rdquo;</p>
+							  	<p class="author-info">&mdash; Toni Haramija</p>
 							</li>
 						</ul>
 					</div>
@@ -337,58 +340,6 @@ include('includes/header.php');
 	   </section> <!-- /testimonials -->
 
 
-	   <!-- download
-   	================================================== -->
-   	<section id="download">
-
-	   	<div class="overlay"></div>
-
-	   	<div class="row download-content" >
-	   		<div class="col-twelve">
-
-					<div class="text-part">
-						<h2 class="animate-this">Download Elevate Now.</h2>
-
-			   		<p class="lead animate-this">Lorem ipsum Tempor do Excepteur nulla aute deserunt reprehenderit aute commodo aliquip laboris velit eu esse exercitation ex fugiat pariatur aute consequat. Lorem ipsum Fugiat mollit quis qui. Lorem ipsum Duis Excepteur Duis magna fugiat incididunt qui id quis dolor nisi irure proident labore ut in incididunt eiusmod est anim.</p>
-					</div>   			
-
-			   	<a class="button large animate-this" href="#">                               
-			         Download Elevate
-			      </a>  			
-
-	   		</div>
-	   	</div>
-   	</section> <!-- /download -->
-
-
-	   <!-- subscribe
-   	================================================== -->
-  		<section id="subscribe">
-               
-         <div class="row subscribe-content">
-            <div class="col-twelve">
-
-               <h2 class="h01 animate-this">Stay upto date, join our newsletter</h2>
-               <form id="mc-form" class="group" novalidate="true" autocomplete="off">
-
-               	<div class="row">
-               		<div class="col-eight tab-full left animate-this" data-animate="fadeInLeft">					
-			   				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required="">			   				
-			   			</div>
-
-				   		<div class="col-four tab-full right animate-this"  data-animate="fadeInRight">
-				   			<input type="submit" value="Get Notified" name="subscribe" class="button large">
-				   		</div>				   		
-               	</div> <!-- /row -->	
-
-               	<label for="mce-EMAIL" class="subscribe-message"></label>					
-					
-					</form>
-            
-            </div>
-         </div>
-                
-      </section> <!-- /subscribe -->		
    
    </div> <!-- /main-content-wrap -->
 
