@@ -47,7 +47,9 @@ if (!isset($page_title)) {
         <?php
 
         echo   '<li><a class="smoothscroll" href="#intro" title="">Domov</a></li>
-        <li><a class="smoothscroll" href="#features" title="">Funkcionalnosti</a></li>';
+        <li><a class="smoothscroll" href="#features" title="">Funkcionalnosti</a></li>
+        <li><a class="smoothscroll" href="#testimonials" title="">Mnenja uporabnikov</a></li>';
+
 
         if (isset($_SESSION['ime'])) {
 

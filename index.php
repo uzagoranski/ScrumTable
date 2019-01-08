@@ -28,7 +28,7 @@ include('includes/header.php');
             <div class="col-twelve with-bottom-line">
             <h2 class="">Funkcionalnosti.</h2>
 
-            <p class="lead">Vse funkcionalnosti katere vam nudimo.</p>
+            <p class="lead">Vse funkcionalnosti, ki vam jih nudimo.</p>
             </div>
         </div>
 
@@ -45,7 +45,7 @@ include('includes/header.php');
                 <h3>Dodajanje projektov</h3>
 
                         <p>
-                            Funkcionalnost bo omogočala prijavljenim uporabnikom dodajanje novega projekta. S tem se bo ustvarila SCRUM tabla, kamor bo mogoče dodajati posamezne sprinte (iteracije), na sprinte pa bo uporabnik vezal taske (naloge). Tipično bo tabla enega sprinta razdeljena na segmente »To-Do«, »In progress«, »Done«. Ko bo se stanje posameznega taska spremenilo, bo ga uporabnik lahko premaknil v naslednji segment.
+                            Funkcionalnost omogoča prijavljenim uporabnikom dodajanje novega projekta. S tem se bo ustvarila SCRUM tabla, kamor bo mogoče dodajati posamezne sprinte (iteracije), na sprinte pa bo uporabnik vezal taske (naloge).
                        </p>
 
                     </div>
@@ -61,7 +61,7 @@ include('includes/header.php');
                 <h3>Dodajanje sprintov</h3>
 
                         <p>
-                            Funkcionalnost bo omogočala prijavljenim uporabnikom dodajanje novega projekta. S tem se bo ustvarila SCRUM tabla, kamor bo mogoče dodajati posamezne sprinte (iteracije), na sprinte pa bo uporabnik vezal taske (naloge). Tipično bo tabla enega sprinta razdeljena na segmente »To-Do«, »In progress«, »Done«. Ko bo se stanje posameznega taska spremenilo, bo ga uporabnik lahko premaknil v naslednji segment.
+                            Vezano na prvo funkcionalnost bo dodajanje sprintov omogočeno prijavljenim uporabnikom. Tipično bo tabla enega sprinta razdeljena na segmente »To-Do«, »In progress«, »Done«. Ko bo se stanje posameznega taska spremenilo, bo ga uporabnik lahko premaknil v naslednji segment.
                        </p>
 
                     </div>
@@ -77,8 +77,8 @@ include('includes/header.php');
                 <h3>Dodajanje taskov</h3>
 
                         <p>
-                            Funkcionalnost bo omogočala prijavljenim uporabnikom dodajanje novega projekta. S tem se bo ustvarila SCRUM tabla, kamor bo mogoče dodajati posamezne sprinte (iteracije), na sprinte pa bo uporabnik vezal taske (naloge). Tipično bo tabla enega sprinta razdeljena na segmente »To-Do«, »In progress«, »Done«. Ko bo se stanje posameznega taska spremenilo, bo ga uporabnik lahko premaknil v naslednji segment.
-                       </p>
+                           Po dodanem sprintu se bo stran razdelila na 3 segmente. Task se bo lahko dodal v segment "To Do", ko bo v procesu izdelave pa bo ga uporabnik lahko prestavil v "In Progress" segment. Vsi opravljeni taski bodo v segmentu "Done".
+                        </p>
 
                     </div>
 
@@ -164,9 +164,9 @@ include('includes/header.php');
 
 					<div class="flexslider-controls animate-this">
 					   <ul class="flex-control-nav">
-					      <li><img src="images/customer01.jpg" alt=""></li>
-					      <li><img src="images/customer02.jpg" alt=""></li>
-					      <li><img src="images/customer03.jpg" alt=""></li>
+					      <li><img src="images/mare.jpg" alt=""></li>
+					      <li><img src="images/reheru.jpg" alt=""></li>
+					      <li><img src="images/tonski.jpg" alt=""></li>
 					   </ul>
 					</div>
 						
