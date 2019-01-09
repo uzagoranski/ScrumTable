@@ -13,3 +13,20 @@
 .formal:focus {
     color: orange !important;
 }
+
+option {
+    color: orange !important;
+}
+
+label {
+    color: orange !important;
+}
+
+.izberiUporabnika {
+    height: 100px;
+    text-align: center;
+}
+
+#styles {
+    background-color: white !important;
+}

@@ -24,6 +24,7 @@ if (!isset($page_title)) {
 
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="icon" type="image/png" href="includes/favicon.png">
 
@@ -46,14 +47,12 @@ if (!isset($page_title)) {
 
         <?php
 
-        echo   '<li><a class="smoothscroll" href="#intro" title="">Domov</a></li>
-        <li><a class="smoothscroll" href="#features" title="">Funkcionalnosti</a></li>
-        <li><a class="smoothscroll" href="#testimonials" title="">Mnenja uporabnikov</a></li>';
-
+        echo '<li><a href="/ScrumTable" title="">Domov</a></li>
+        <li><a href="/ScrumTable/#features" title="">Funkcionalnosti</a></li>
+        <li><a href="/ScrumTable/#testimonials" title="">Mnenja uporabnikov</a></li>';
 
         if (isset($_SESSION['ime'])) {
-
-            echo '<li><a href="/ScrumTable/myProjects.php" title="">Moji projekti</a></li>
+            echo '<li><a href="/ScrumTable/myProjects.php?idUporabnik='.$_SESSION['idUporabnik'].'" title="">Moji projekti</a></li>
         </ul>
         <div class="action">
             <a class="button" href="/ScrumTable/addProject.php">Nov projekt</a>
