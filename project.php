@@ -5,105 +5,129 @@ require('includes/config.php');
 include('includes/header.php');
 
 require(MYSQL);
-?>
 
-    <div id="main-content-wrap">
-        <section id="intro">
-            <div class="row intro-content">
-                <div class="col-twelve">
-                    <?php
-                    $query = "SELECT * FROM projekt WHERE idProjekt ={$_GET['idProjekt']}";
-                    $r = mysqli_query($dbc, $query) or trigger_error("Query: $query\n<br />MySQL Error: " . mysqli_error($dbc));
+if (isset($_SESSION['ime'])) {
 
-                    if (isset($_SESSION['ime'])) {
+    $q1 = "SELECT * FROM projekt WHERE idProjekt = {$_GET['idProjekt']}";
+    $r1 = mysqli_query($dbc, $q1) or trigger_error("Query: $q1\n<br />MySQL Error: " . mysqli_error($dbc));
 
-                        $idUporabnik = $_SESSION['idUporabnik'];
+    $results = mysqli_fetch_array($r1, MYSQLI_ASSOC);
+    echo '<div id = "main-content-wrap" >
+        <section id = "intro" >
+            <div class="row intro-content" >
+                <div class="col-twelve" >
+                    <h1 class="animate-intro" > ' . $results['naziv'] . '</h1 >
+                    <h3 class="animate-intro" >Dodajte uporabnike, preglejte sodelujoče ali uredite sprint.</h3 >
+                    <br/>
+                </div > 
+            </div > 
+        </section > 
+        <section id = "styles" >
+            <div class="row add-bottom text-center" >
+                <div class="row" >
+                    <div class="col-twelve" >
+                    <br/>
+                    <h1>VSI SPRINTI</h1>
+                        <div class="table-responsive" >';
+                        $q2 = "SELECT * FROM sprint WHERE idProjekt = {$_GET['idProjekt']}";
+                        $r2 = mysqli_query($dbc, $q2) or trigger_error("Query: $q2\n<br />MySQL Error: " . mysqli_error($dbc));
 
-                        $results = mysqli_fetch_array($r, MYSQLI_ASSOC);
-                        echo '<h1> ' . $results['naziv'] . ' </h1>
-                              <label>Izberite sodelujoče uporabnike pri projektu</label>';
+                        $num = mysqli_num_rows($r2);
 
-                        echo '
-                    <div class="buttons">
-                        <form action="addProject.php" method="post">
-                            <fieldset>
-                            <select class="izberiUporabnika" style="width: 100%" multiple>';
+                        if ($num > 0) {
+                            echo '<table>
+                                    <thead>
+                                        <tr>
+                                            <th>Naziv Sprinta</th>
+                                            <th>Povezava</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>';
 
-                        $q1 = "SELECT idUporabnik, email, CONCAT(ime, ' ', priimek) AS name FROM uporabnik";
-                        $r1 = mysqli_query($dbc, $q1) or trigger_error("Query: $q1\n<br />MySQL Error: " . mysqli_error($dbc));
-
-                        $rowCount = mysqli_num_rows($r);
-
-                        if ($rowCount > 0) {
-                            while ($results = mysqli_fetch_array($r1, MYSQLI_ASSOC)) {
-                                if ($results['idUporabnik'] != $idUporabnik) {
-                                    echo '<option value="' . $results['idUporabnik'] . '">' . $results['name'] . ' (' . $results['email']. ')</option>';
-                                }
+                            while ($row = mysqli_fetch_array($r2, MYSQLI_ASSOC)) {
+                                echo '<tr id="dodajanje">
+                                   <td>' . $row['naziv'] . '</td>
+                                   <td><a href="/ScrumTable/sprint.php?idSprint=' . $row['idSprint'] . '" title="">Podrobnosti Sprinta</a></td>
+                                </tr>';
                             }
+                            echo '</tbody></table></div>
+                            <form method="post" action="addSprint.php?idProjekt=' . $_GET['idProjekt'] . '">
+                                <button class="button button-primary">Dodaj Sprint</button>
+                            </form>';
                         } else {
-                            echo '<option value="">Noben uporabnik ni na voljo</option>';
+                            echo '<p class="error">Niste dodali nobenega Sprinta.</p>';
                         }
-                        echo '
-                                </select>
-                            </fieldset>
-                            <input class="btn btn-primary" type="submit" name="submit" value="Dodaj uporabnika/e" />
-                        </form>
-                    </div>';
-
-                    } else {
-                        echo '<h1>Za dodajanje uporabnikov na projekt morate biti prijavljeni.</h1> </br></br>';
-                    }
-                    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-                        $trimmed = array_map('trim', $_POST);
-
-                        // predvidevamo neveljavne podatke
-                        $naziv = FALSE;
-
-                        if ($trimmed['naziv'] !== null) {
-                            $naziv = mysqli_real_escape_string($dbc, $trimmed['naziv']);
-                        } else {
-                            echo '<p class="error">Vnesite veljaven naziv!</p>';
-                        }
-
-                        if ($naziv) {
-
-                            // vstavljanje novega oglasa v podatkovno bazo
-                            $q = "INSERT INTO projekt (naziv) VALUES ('$naziv')";
-                            $r = mysqli_query($dbc, $q) or trigger_error("Query: $q\n<br />MySQL Error: " . mysqli_error($dbc));
-
-                            if (mysqli_affected_rows($dbc) == 1) {
-
-                                $q = "SELECT * FROM projekt WHERE naziv = '$naziv'";
-                                $r = mysqli_query($dbc, $q) or trigger_error("Query: $q\n<br />MySQL Error: " . mysqli_error($dbc));
-
-                                while ($results = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-                                    echo '<h3>Vnos projekta je bil uspešen!</h3>';
-                                    $url = BASE_URL . 'project.php?idProjekt=' . $results['idProjekt'];
-                                    header("Location: $url");
-                                    exit();
-                                }
-
-
-                            } else { // če je šlo kaj narobe
-                                echo '<p class="error">Zaradi napake vnos projekta ni bil mogoč. Ponovite postopek.</p>';
-                            }
-
-                        } else { // če je prišlo do napake pri preverjanju registracijskih podatkov
-                            echo '<p class="error">Napaka pri preverjanju vnosnih podatkov. Ponovite postopek.</p>';
-                        }
-
-                        mysqli_close($dbc);
-                    }
-                    ?>
+                    echo '</div>
                 </div>
             </div>
         </section>
-    </div>
+                        
+        <section id = "styles" >
+            <div class="row add-bottom text-center" >
+                <div class="row" >
+                    <div class="col-twelve" >
+                    <br/>
+                    <h1>SODELUJOČI UPORABNIKI</h1>
+                        <div class="table-responsive" >';
 
-<script>
-    let selectedValues = jQuery('#multipleSelect').val();
+        $q3 = "SELECT * FROM uporabnikhasprojekt WHERE idProjekt={$_GET['idProjekt']}";
+        $r3 = mysqli_query($dbc, $q3) or trigger_error("Query: $q3\n<br />MySQL Error: " . mysqli_error($dbc));
 
-</script>
+            echo '<table>
+                    <thead>
+                        <tr>
+                            <th>Ime uporabnika</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                <tbody>';
 
-<?php include('includes/footer.php'); ?>
+        while ($vrsta = mysqli_fetch_array($r3, MYSQLI_ASSOC)) {
+            $q4 = "SELECT idUporabnik, email, CONCAT(ime, ' ', priimek) AS name FROM uporabnik WHERE idUporabnik={$vrsta['idUporabnik']}";
+            $r4 = mysqli_query($dbc, $q4) or trigger_error("Query: $q4\n<br />MySQL Error: " . mysqli_error($dbc));
+
+            $vrstica = mysqli_fetch_array($r4, MYSQLI_ASSOC);
+
+            echo ' <tr>
+               <td>' . $vrstica['name'] . '</td>
+               <td>' . $vrstica['email'] . '</td>
+            </tr>';
+        }
+        echo '</tbody></table></div>
+        
+        <label>Izberite uporabnike iz seznama in jih s klikom na gumb "Dodaj uporabnika/e" povabite k sodelovanju.</label>
+                
+        <form action="addUser.php?idProjekt='.$_GET['idProjekt'].'" method="post">
+            <fieldset>
+                <select name="uporabniki[]" class="izberiUporabnika" style="width: 100%" multiple>';
+
+                $qu = "SELECT idUporabnik, email, CONCAT(ime, ' ', priimek) AS name FROM uporabnik WHERE idUporabnik != (SELECT idUporabnik FROM uporabnikhasprojekt WHERE idProjekt={$_GET['idProjekt']})";
+                $ru = mysqli_query($dbc, $qu) or trigger_error("Query: $qu\n<br />MySQL Error: " . mysqli_error($dbc));
+
+                $stVrstic = mysqli_num_rows($ru);
+
+                if ($stVrstic > 0) {
+                    while ($results = mysqli_fetch_array($ru, MYSQLI_ASSOC)) {
+                        echo '<option value="' . $results['idUporabnik'] . '">' . $results['name'] . ' (' . $results['email'] . ')</option>';
+                    }
+                } else {
+                    echo '<option value="">Noben uporabnik ni na voljo.</option>';
+                }
+
+            echo '</select>
+            </fieldset>
+            <input class="button button-primary" type="submit" name="submit" value="Dodaj uporabnika/e" />
+        </form>
+        </div>
+        </div>
+    </section>
+</div>';
+
+} else {
+    echo '<h1>Za ogled podrobnosti projekta se prijavite v sistem.</h1> </div>
+            </div>
+        </div>
+    </section>
+</div></br></br>';
+}
+include('includes/footer.php');

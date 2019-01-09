@@ -5,31 +5,24 @@ require('includes/config.php');
 include('includes/header.php');
 
 ?>
-    <div id="main-content-wrap">
-        <section id="intro">
+<div id="main-content-wrap">
+    <section id="intro">
+        <div class="row intro-content">
+            <div class="col-twelve">
+                <h1 class="animate-intro">
+                    Moji projekti
+                </h1>
+                <h3 class="animate-intro">Kontrolna plošča projektov, pri katerih sodelujete.</h3><br/>
+            </div>
+        </div>
+    </section>
+    <section id="styles">
+        <div class="row add-bottom text-center">
 
-            <!-- <div class="shadow-overlay"></div> -->
-
-            <div class="row intro-content">
-                <div class="col-twelve">
-
-
-                    <h1 class="animate-intro">
-                        Moji projekti
-                    </h1>
-                    <h3 class="animate-intro">Kontrolna plošča projektov, pri katerih sodelujete.</h3>
-
-                </div> <!-- /twelve -->
-            </div> <!-- /row -->
-
-        </section> <!-- /intro -->
-        <section id="styles">
-            <div class="row add-bottom text-center">
-
-                <div class="row">
+            <div class="row">
 
                 <div class="col-twelve">
-
+                    <br/>
                     <div class="table-responsive">
 
                         <?php if (isset($_SESSION['ime'])) {
@@ -47,6 +40,7 @@ include('includes/header.php');
                                         <tr>
                                             <th>Naziv projekta</th>
                                             <th>Povezava</th>
+                                            <th>Število Sprintov</th>
                                             <th>Število sodelujočih</th>
                                         </tr>
                                     </thead>
@@ -65,12 +59,13 @@ include('includes/header.php');
                                         echo ' <tr>
                                                <td>'.$results['naziv'].'</td>
                                                <td><a href="/ScrumTable/project.php?idProjekt='.$results['idProjekt'].'" title="">Podrobnosti projekta</a></td>
+                                               <td>'.$results['steviloSprintov'].'</td>
                                                <td>'.$steviloUdelezencev.'</td>
                                            </tr>';
                                     }
                                 }
-                                echo '</tbody>
-                                    </table>';
+                                echo '</tbody></table>
+                                    <a href="addProject.php" class="button button-primary">Nov projekt</a>';
                             } else {
                                 echo '<p class="error">Niste dodali nobenega projekta.</p>';
                             }
@@ -78,12 +73,11 @@ include('includes/header.php');
                             echo '<h1>Za ogled vaših projektov se prijavite v sistem.</h1> </br></br>';
                         }
                         ?>
-
-                    </div>
+                    </div> <br/>
                 </div>
-            </div> <!--row -->
             </div>
-        </section>
-    </div> <!-- /main-content-wrap -->
+        </div>
+    </section>
+</div>
 
 <?php include('includes/footer.php'); ?>

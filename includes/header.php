@@ -22,9 +22,9 @@ if (!isset($page_title)) {
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="styles/site.css">
 
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="js/modernizr.js"></script>
     <script src="js/pace.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="icon" type="image/png" href="includes/favicon.png">
 
@@ -52,7 +52,7 @@ if (!isset($page_title)) {
         <li><a href="/ScrumTable/#testimonials" title="">Mnenja uporabnikov</a></li>';
 
         if (isset($_SESSION['ime'])) {
-            echo '<li><a href="/ScrumTable/myProjects.php?idUporabnik='.$_SESSION['idUporabnik'].'" title="">Moji projekti</a></li>
+            echo '<li><a href="/ScrumTable/myProjects.php" title="">Moji projekti</a></li>
         </ul>
         <div class="action">
             <a class="button" href="/ScrumTable/addProject.php">Nov projekt</a>

@@ -18,7 +18,7 @@ include('includes/header.php');
 						<a class="button stroke smoothscroll animate-intro" href="#features" title="">Funkcionalnosti</a>
 						<a class="button stroke smoothscroll animate-intro" href="#testimonials" title="">Mnenja uporabnikov</a>
 					</div>
-					<img src="images/app-screenshot-big.jpg" alt="" class="animate-intro">
+					<img src="images/screen.png" alt="" class="animate-intro">
             </div>
        </div>
     </section>
@@ -133,17 +133,14 @@ include('includes/header.php');
             </div> <!-- /features-list -->
         </div> <!-- /features-wrap -->
     </section> <!-- /features -->
-
 	
 	   <!-- testimonials
    	================================================== -->
 	   <section id="testimonials">
-	   	<div class="row testimonial-content">
-	   		<div class="col-twelve">
+            <div class="row testimonial-content">
+	   		    <div class="col-twelve">
 
-	   			<h2 class="h01 animate-this">
-                  Kaj naše stranke pravijo o nas.
-               </h2>
+                    <h2 class="h01 animate-this">Kaj naše stranke pravijo o nas.</h2>
 
 					<div id="testimonial-slider" class="flexslider animate-this">
 						<ul class="slides">	
@@ -169,13 +166,9 @@ include('includes/header.php');
 					      <li><img src="images/tonski.jpg" alt=""></li>
 					   </ul>
 					</div>
-						
-	   		</div>
-	   	</div>
+	   		    </div>
+	   	    </div>
 	   </section> <!-- /testimonials -->
-
-
-
    </div> <!-- /main-content-wrap -->
 
 <?php include('includes/footer.php'); ?>

@@ -21,10 +21,9 @@ require(MYSQL);
 
                         $idUporabnik = $_SESSION['idUporabnik'];
 
-                        echo '
-                    <h1>
-                        Dodajanje projekta
-                    </h1>
+                        echo '<h1>Nov projekt</h1>
+                        <h3 class="animate-intro">Stran za dodajanje novega projekta.</h3><br/>
+
                     <div class="buttons">
                         <form action="addProject.php" method="post">
                             <fieldset>
@@ -53,7 +52,7 @@ require(MYSQL);
                         if ($naziv) {
 
                             // vstavljanje novega oglasa v podatkovno bazo
-                            $q = "INSERT INTO projekt (naziv) VALUES ('$naziv')";
+                            $q = "INSERT INTO projekt (naziv, steviloSprintov) VALUES ('$naziv', '1')";
                             $r = mysqli_query($dbc, $q) or trigger_error("Query: $q\n<br />MySQL Error: " . mysqli_error($dbc));
 
                             if (mysqli_affected_rows($dbc) == 1) {
@@ -66,10 +65,14 @@ require(MYSQL);
                                 $q2 = "INSERT INTO uporabnikHasProjekt (idProjekt, idUporabnik) VALUES ('{$results['idProjekt']}', '$idUporabnik')";
                                 $r2 = mysqli_query($dbc, $q2) or trigger_error("Query: $q2\n<br />MySQL Error: " . mysqli_error($dbc));
 
+                                $sprint = "Sprint 1";
+
+                                $q2 = "INSERT INTO sprint (naziv, idProjekt) VALUES ('$sprint', '{$results['idProjekt']}')";
+                                $r2 = mysqli_query($dbc, $q2) or trigger_error("Query: $q2\n<br />MySQL Error: " . mysqli_error($dbc));
+
                                 $url = BASE_URL . 'project.php?idProjekt=' . $results['idProjekt'];
                                 header("Location: $url");
                                 exit();
-
 
                             } else { // če je šlo kaj narobe
                                 echo '<p class="error">Zaradi napake vnos projekta ni bil mogoč. Ponovite postopek.</p>';

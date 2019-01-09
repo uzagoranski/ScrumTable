@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 07. jan 2019 ob 12.35
+-- Čas nastanka: 09. jan 2019 ob 21.27
 -- Različica strežnika: 10.1.37-MariaDB
 -- Različica PHP: 7.2.12
 
@@ -30,8 +30,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `projekt` (
   `idProjekt` int(11) NOT NULL,
-  `naziv` varchar(500) COLLATE utf8_slovenian_ci NOT NULL
+  `naziv` varchar(500) COLLATE utf8_slovenian_ci NOT NULL,
+  `steviloSprintov` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+--
+-- Odloži podatke za tabelo `projekt`
+--
+
+INSERT INTO `projekt` (`idProjekt`, `naziv`, `steviloSprintov`) VALUES
+(1, 'Projekt testni drekec', 1),
+(14, 'Prvi s sprintom', 2),
+(15, 'En', 1),
+(16, 'TEST', 1);
 
 -- --------------------------------------------------------
 
@@ -44,6 +55,16 @@ CREATE TABLE `sprint` (
   `naziv` varchar(500) COLLATE utf8_slovenian_ci NOT NULL,
   `idProjekt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+--
+-- Odloži podatke za tabelo `sprint`
+--
+
+INSERT INTO `sprint` (`idSprint`, `naziv`, `idProjekt`) VALUES
+(1, 'Sprint 1', 14),
+(2, 'Sprint 1', 15),
+(4, 'Sprint 2', 14),
+(5, 'Sprint 1', 16);
 
 -- --------------------------------------------------------
 
@@ -88,7 +109,10 @@ CREATE TABLE `uporabnik` (
 --
 
 INSERT INTO `uporabnik` (`idUporabnik`, `ime`, `priimek`, `email`, `geslo`) VALUES
-(1, 'Test', 'Test', 'test@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
+(1, 'Test', 'Test', 'test@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(2, 'Peter', 'Pan', 'peterpan@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(3, 'Ferdo', 'Perdec', 'ferdo.perdec@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(4, 'Gašper', 'Reher', 'gasper.reher@student.um.si', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
 
 -- --------------------------------------------------------
 
@@ -101,6 +125,24 @@ CREATE TABLE `uporabnikhasprojekt` (
   `idProjekt` int(11) NOT NULL,
   `idUporabnik` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+--
+-- Odloži podatke za tabelo `uporabnikhasprojekt`
+--
+
+INSERT INTO `uporabnikhasprojekt` (`idUporabnikHasProjekt`, `idProjekt`, `idUporabnik`) VALUES
+(2, 10, 1),
+(3, 10, 2),
+(4, 1, 1),
+(5, 12, 1),
+(6, 9, 1),
+(7, 14, 1),
+(8, 15, 1),
+(9, 16, 1),
+(10, 14, 2),
+(11, 15, 2),
+(12, 16, 3),
+(13, 16, 4);
 
 --
 -- Indeksi zavrženih tabel
@@ -156,13 +198,13 @@ ALTER TABLE `uporabnikhasprojekt`
 -- AUTO_INCREMENT tabele `projekt`
 --
 ALTER TABLE `projekt`
-  MODIFY `idProjekt` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT tabele `sprint`
 --
 ALTER TABLE `sprint`
-  MODIFY `idSprint` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idSprint` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT tabele `task`
@@ -180,13 +222,13 @@ ALTER TABLE `tiptask`
 -- AUTO_INCREMENT tabele `uporabnik`
 --
 ALTER TABLE `uporabnik`
-  MODIFY `idUporabnik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUporabnik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT tabele `uporabnikhasprojekt`
 --
 ALTER TABLE `uporabnikhasprojekt`
-  MODIFY `idUporabnikHasProjekt` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUporabnikHasProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

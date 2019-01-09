@@ -5,16 +5,27 @@ require('includes/config.php');
 include('includes/header.php');
 
 require(MYSQL);
-?>
 
-    <section id="pricing">
+if (isset($_SESSION['ime'])) {
 
+    $query = "SELECT * FROM sprint WHERE idSprint = {$_GET['idSprint']}";
+    $r = mysqli_query($dbc, $query) or trigger_error("Query: $query\n<br />MySQL Error: " . mysqli_error($dbc));
+
+    $results = mysqli_fetch_array ($r, MYSQLI_ASSOC);
+
+    $q2 = "SELECT * FROM projekt WHERE idProjekt = {$results['idProjekt']}";
+    $r2 = mysqli_query($dbc, $q2) or trigger_error("Query: $q2\n<br />MySQL Error: " . mysqli_error($dbc));
+
+    $row = mysqli_fetch_array ($r2, MYSQLI_ASSOC);
+
+    echo '<section id="pricing">
         <div class="row section-intro animate-this">
             <div class="col-twelve with-bottom-line">
 
-                <h2>Sprint </h2>
+                <h2>' . $results['naziv'] . '</h2>
 
-                <p class="lead">Vsi Taski Sprinta pri projektu</p>
+                <h4 class="lead">PROJEKT: ' . $row['naziv'] . '</h4>
+                <p class="lead">Dodajajte opravila (taske) v segment "To Do" & jih z gumboma levo in desno premikajte po poljih.</p>
 
             </div>
         </div>
@@ -50,7 +61,7 @@ require(MYSQL);
 
                     </div>
 
-                </div> <!-- /bgrid -->
+                </div> 
 
                 <div class="bgrid animate-this">
 
@@ -79,7 +90,7 @@ require(MYSQL);
 
                     </div>
 
-                </div> <!-- /bgrid -->
+                </div> 
 
                 <div class="bgrid animate-this">
 
@@ -108,12 +119,25 @@ require(MYSQL);
 
                     </div>
 
-                </div> <!-- /bgrid -->
+                </div> 
 
-            </div> <!-- /pricing-tables -->
+            </div> 
 
-        </div> <!-- /pricing-content -->
+        </div> 
 
-    </section> <!-- Pricing -->
+    </section>';
+} else {
+    echo '<section id="pricing">
+        <div class="row section-intro animate-this">
+            <div class="col-twelve with-bottom-line">
 
-<?php include('includes/footer.php'); ?>
+                <h2>Niste prijavljeni</h2>
+
+                <p class="lead">Za ogled podrobnosti Sprinta se prijavite v sistem</p>
+
+            </div>
+        </div>
+    </section>';
+}
+
+include('includes/footer.php');

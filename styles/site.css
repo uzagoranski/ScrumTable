@@ -15,7 +15,7 @@
 }
 
 option {
-    color: orange !important;
+    color: black !important;
 }
 
 label {
@@ -23,7 +23,7 @@ label {
 }
 
 .izberiUporabnika {
-    height: 100px;
+    height: 120px;
     text-align: center;
 }
 
