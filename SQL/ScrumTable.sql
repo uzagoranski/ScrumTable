@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 09. jan 2019 ob 21.27
+-- Čas nastanka: 13. jan 2019 ob 21.52
 -- Različica strežnika: 10.1.37-MariaDB
 -- Različica PHP: 7.2.12
 
@@ -39,10 +39,8 @@ CREATE TABLE `projekt` (
 --
 
 INSERT INTO `projekt` (`idProjekt`, `naziv`, `steviloSprintov`) VALUES
-(1, 'Projekt testni drekec', 1),
-(14, 'Prvi s sprintom', 2),
-(15, 'En', 1),
-(16, 'TEST', 1);
+(23, 'Test', 2),
+(24, 'TEST2', 1);
 
 -- --------------------------------------------------------
 
@@ -61,10 +59,10 @@ CREATE TABLE `sprint` (
 --
 
 INSERT INTO `sprint` (`idSprint`, `naziv`, `idProjekt`) VALUES
-(1, 'Sprint 1', 14),
-(2, 'Sprint 1', 15),
-(4, 'Sprint 2', 14),
-(5, 'Sprint 1', 16);
+(15, 'Sprint 1', 23),
+(16, 'Sprint 1', 24),
+(17, 'Sprint 1', 25),
+(18, 'Sprint 2', 23);
 
 -- --------------------------------------------------------
 
@@ -76,19 +74,24 @@ CREATE TABLE `task` (
   `idTask` int(11) NOT NULL,
   `naziv` varchar(500) COLLATE utf8_slovenian_ci NOT NULL,
   `opis` varchar(500) COLLATE utf8_slovenian_ci NOT NULL,
-  `idSprint` int(11) NOT NULL
+  `rok_taska` date NOT NULL,
+  `obtezitev` int(11) NOT NULL,
+  `stanje` int(3) NOT NULL,
+  `datoteka` varchar(100) COLLATE utf8_slovenian_ci DEFAULT NULL,
+  `idSprint` int(11) NOT NULL,
+  `idUporabnik` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
--- --------------------------------------------------------
-
 --
--- Struktura tabele `tiptask`
+-- Odloži podatke za tabelo `task`
 --
 
-CREATE TABLE `tiptask` (
-  `idTipTask` int(11) NOT NULL,
-  `naziv` varchar(50) COLLATE utf8_slovenian_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+INSERT INTO `task` (`idTask`, `naziv`, `opis`, `rok_taska`, `obtezitev`, `stanje`, `datoteka`, `idSprint`, `idUporabnik`) VALUES
+(3, 'TESTNI ', 'ZA TEST.', '2019-01-15', 4, 1, NULL, 15, 7),
+(4, 'testni task', 'Test, narejen za testiranje dodeljevanja taska uporabniku.', '2019-01-21', 4, 2, 'Razhroscevanje_2_Uros_Zagoranski.zip', 15, NULL),
+(5, 'Taskec', 'Opis taska', '2019-01-13', 5, 3, 'Preoblikovanje_Uros_Zagoranski.zip', 15, NULL),
+(6, 'Audi A6 Karavan', 'Opis taska 1', '2019-01-13', 8, 3, 'Uros_Zagoranski.zip', 15, NULL),
+(8, 'Mercedes-Benz S Coupe S500D', 'Merđooo', '2019-01-24', 9, 2, NULL, 15, NULL);
 
 -- --------------------------------------------------------
 
@@ -109,10 +112,14 @@ CREATE TABLE `uporabnik` (
 --
 
 INSERT INTO `uporabnik` (`idUporabnik`, `ime`, `priimek`, `email`, `geslo`) VALUES
-(1, 'Test', 'Test', 'test@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
-(2, 'Peter', 'Pan', 'peterpan@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
-(3, 'Ferdo', 'Perdec', 'ferdo.perdec@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
-(4, 'Gašper', 'Reher', 'gasper.reher@student.um.si', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
+(7, 'Uroš', 'Zagoranski', 'uros.zagoranski@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(8, 'Toni', 'Haramija', 'tonskikralju@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(9, 'Test', 'Test', 'test@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(10, 'Aljoša', 'Sikošek', 'aljosa.sikosek@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(11, 'Gašper', 'Reher', 'reheru@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(12, 'Gašper', 'Haložan', 'gasperh@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(13, 'Marko', 'Zemljarič', 'marko.zemljaric@student.um.si', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(14, 'Primož', 'Stopar', 'poljcanskikralj@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
 
 -- --------------------------------------------------------
 
@@ -131,18 +138,10 @@ CREATE TABLE `uporabnikhasprojekt` (
 --
 
 INSERT INTO `uporabnikhasprojekt` (`idUporabnikHasProjekt`, `idProjekt`, `idUporabnik`) VALUES
-(2, 10, 1),
-(3, 10, 2),
-(4, 1, 1),
-(5, 12, 1),
-(6, 9, 1),
-(7, 14, 1),
-(8, 15, 1),
-(9, 16, 1),
-(10, 14, 2),
-(11, 15, 2),
-(12, 16, 3),
-(13, 16, 4);
+(32, 23, 9),
+(33, 23, 7),
+(34, 24, 9),
+(36, 23, 14);
 
 --
 -- Indeksi zavrženih tabel
@@ -170,13 +169,6 @@ ALTER TABLE `task`
   ADD UNIQUE KEY `idTask` (`idTask`);
 
 --
--- Indeksi tabele `tiptask`
---
-ALTER TABLE `tiptask`
-  ADD PRIMARY KEY (`idTipTask`),
-  ADD UNIQUE KEY `idTipTask` (`idTipTask`);
-
---
 -- Indeksi tabele `uporabnik`
 --
 ALTER TABLE `uporabnik`
@@ -198,37 +190,31 @@ ALTER TABLE `uporabnikhasprojekt`
 -- AUTO_INCREMENT tabele `projekt`
 --
 ALTER TABLE `projekt`
-  MODIFY `idProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT tabele `sprint`
 --
 ALTER TABLE `sprint`
-  MODIFY `idSprint` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idSprint` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT tabele `task`
 --
 ALTER TABLE `task`
-  MODIFY `idTask` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT tabele `tiptask`
---
-ALTER TABLE `tiptask`
-  MODIFY `idTipTask` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTask` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT tabele `uporabnik`
 --
 ALTER TABLE `uporabnik`
-  MODIFY `idUporabnik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUporabnik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT tabele `uporabnikhasprojekt`
 --
 ALTER TABLE `uporabnikhasprojekt`
-  MODIFY `idUporabnikHasProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idUporabnikHasProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
