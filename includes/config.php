@@ -6,7 +6,7 @@ define('EMAIL', 'urozag@gmail.com');
 define ('BASE_URL', 'http://localhost/ScrumTable/');
 
 // lokacija konfiguracijske datoteke za PB
-define ('MYSQL', 'C:\wamp64\www\ScrumTable\includes\mysqli_connect.php');
+define ('MYSQL', 'C:\xampp\htdocs\ScrumTable\includes\mysqli_connect.php');
 
 // nastavitev časovnega pasu (PHP 5.1 ali višji)
 date_default_timezone_set ('Europe/Ljubljana');

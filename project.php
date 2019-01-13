@@ -101,7 +101,7 @@ if (isset($_SESSION['ime'])) {
             <fieldset>
                 <select name="uporabniki[]" class="izberiUporabnika" style="width: 100%" multiple>';
 
-                $qu = "SELECT idUporabnik, email, CONCAT(ime, ' ', priimek) AS name FROM uporabnik WHERE idUporabnik != (SELECT idUporabnik FROM uporabnikhasprojekt WHERE idProjekt={$_GET['idProjekt']})";
+                $qu = "SELECT idUporabnik, email, CONCAT(ime, ' ', priimek) AS name FROM uporabnik WHERE idUporabnik NOT IN (SELECT idUporabnik FROM uporabnikhasprojekt WHERE idProjekt={$_GET['idProjekt']})";
                 $ru = mysqli_query($dbc, $qu) or trigger_error("Query: $qu\n<br />MySQL Error: " . mysqli_error($dbc));
 
                 $stVrstic = mysqli_num_rows($ru);

@@ -30,3 +30,52 @@ label {
 #styles {
     background-color: white !important;
 }
+
+.notranji {
+    position: relative;
+    margin-bottom: 30px;
+    background: white;
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+}
+
+.obtezitev {
+    border: 1px black;
+    color: white;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: #ce1137;
+}
+
+.nazivTaska {
+    text-transform: uppercase;
+}
+
+.naslovi {
+    color:#ce1137;
+}
+
+.noter {
+    text-transform: lowercase;
+    color: black;
+}
+
+.dat {
+    color: black;
+}
+
+.dodajanjeDatoteke {
+    margin: 0 !important;
+}
+
+.datum {
+    border: transparent;
+    color: orange !important;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.puscice {
+    font-size: 30px;
+}

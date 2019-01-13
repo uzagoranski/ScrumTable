@@ -13,8 +13,8 @@
             <div class="col-four tab-full collapse">
                 <h4><i class="icon-phone-incoming"></i> Kontakt</h4>
 
-                <p>aljosa.sikosek@student.um.si<br>
-                    info@scrumtable.com <br>
+                <p>uros.zagoranski@student.um.si<br>
+                    aljosa.sikosek@student.um.si<br>
                     Telefon: (+386) 40 000 444
                 </p>
             </div>

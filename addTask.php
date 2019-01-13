@@ -20,18 +20,14 @@ require(MYSQL);
                         <h3 class="animate-intro">Stran za dodajanje novega taska.</h3><br/>
 
                     <div class="buttons">
-                        <form action="addTask.php?idSprint='. $_GET['idSprint'].'" method="post">
+                        <form action="addTask.php?idSprint='.$idSprint .'" method="post">
                             <fieldset>
                                 <input class="formal" style="width: 100%" type="text" name="naziv" placeholder="Vnesite naziv taska"/>                                
-                            </fieldset>
-                              <fieldset>
                                 <input class="formal" style="width: 100%" type="text" name="opis" placeholder="Vnesite opis taska"/>                                
-                            </fieldset>                     
-                                <input class="formal" type="number" min="1" max="10" style="width: 100%" name="obtezitev" placeholder="Vnesite obtezitev"/>                                
-                            <fieldset>
-                                <input class="formal" type="date" style="width: 100%" name="rok_taska" placeholder="Vnesite deadline"/>                                
-                            </fieldset>                                                                                                                                                                                                                                                                   
-                            <input class="btn btn-primary" type="submit" name="submit" value="Dodaj task" />                            
+                                <input class="formal" type="number" min="1" max="10" style="width: 100%" name="obtezitev" placeholder="Vnesite obtežitev"/>                                
+                                <input class="formal datum" type="date" style="width: 100%" name="rok_taska" placeholder="Vnesite deadline"/>                                
+                            </fieldset>                         
+                            <input class="btn btn-primary" type="submit" name="submit" value="Dodaj task" />   
                         </form>
                     </div>';
 
@@ -43,10 +39,7 @@ require(MYSQL);
                         $trimmed = array_map('trim', $_POST);
 
                         // predvidevamo neveljavne podatke
-                        $naziv = FALSE;
-                        $opis = FALSE;
-                        $obtezitev = FALSE;
-                        $rok_taska = FALSE;
+                        $naziv = $opis = $obtezitev = $rok_taska = FALSE;
 
                         if ($trimmed['naziv'] !== null) {
                             $naziv = mysqli_real_escape_string($dbc, $trimmed['naziv']);
@@ -61,7 +54,7 @@ require(MYSQL);
                         if ($trimmed['obtezitev'] !== null) {
                             $obtezitev = mysqli_real_escape_string($dbc, $trimmed['obtezitev']);
                         } else {
-                            echo '<p class="error">Vnesite obtezitev!</p>';
+                            echo '<p class="error">Vnesite obtežitev!</p>';
                         }
                         if ($trimmed['rok_taska'] !== null) {
                             $rok_taska = mysqli_real_escape_string($dbc, $trimmed['rok_taska']);
@@ -82,17 +75,12 @@ require(MYSQL);
                             } else { // če je šlo kaj narobe
                                 echo '<p class="error">Zaradi napake vnos taska ni bil mogoč. Ponovite postopek.</p>';
                             }
-
-                        } else { // če je prišlo do napake pri preverjanju  podatkov
-                            echo '<p class="error">Napaka pri preverjanju vnosnih podatkov. Ponovite postopek.</p>';
                         }
 
                         mysqli_close($dbc);?>
-
-
                 </div>
             </div>
+        </section>
     </div>
-    </section>
 
 <?php include('includes/footer.php'); ?>
