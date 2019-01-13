@@ -8,15 +8,13 @@ require(MYSQL);
 
 if (isset($_SESSION['ime'])) {
 
-    $query = "SELECT * FROM sprint WHERE idSprint = {$_GET['idSprint']}";
-    $r = mysqli_query($dbc, $query) or trigger_error("Query: $query\n<br />MySQL Error: " . mysqli_error($dbc));
-
+    $q = "SELECT * FROM sprint WHERE idSprint = {$_GET['idSprint']}";
+    $r = mysqli_query($dbc, $q) or trigger_error("Query: $q\n<br />MySQL Error: " . mysqli_error($dbc));
     $results = mysqli_fetch_array ($r, MYSQLI_ASSOC);
 
-    $q2 = "SELECT * FROM projekt WHERE idProjekt = {$results['idProjekt']}";
-    $r2 = mysqli_query($dbc, $q2) or trigger_error("Query: $q2\n<br />MySQL Error: " . mysqli_error($dbc));
-
-    $row = mysqli_fetch_array ($r2, MYSQLI_ASSOC);
+    $query = "SELECT * FROM projekt WHERE idProjekt = {$results['idProjekt']}";
+    $return = mysqli_query($dbc, $query) or trigger_error("Query: $query\n<br />MySQL Error: " . mysqli_error($dbc));
+    $row = mysqli_fetch_array ($return, MYSQLI_ASSOC);
 
     echo '<section id="pricing">
         <div class="row section-intro animate-this">
@@ -25,7 +23,7 @@ if (isset($_SESSION['ime'])) {
                 <h2>' . $results['naziv'] . '</h2>
 
                 <h4 class="lead">PROJEKT: ' . $row['naziv'] . '</h4>
-                <p class="lead">Dodajajte opravila (taske) v segment "To Do" & jih z gumboma levo in desno premikajte po poljih.</p>
+                <p class="lead">Dodajajte taske v segment "To Do" in jih z miško premikajte po poljih.</p>
 
             </div>
         </div>
@@ -40,22 +38,26 @@ if (isset($_SESSION['ime'])) {
 
                         <div class="top-part">
 
-                            <h3 class="plan-title">Starter</h3>
-                            <p class="plan-price"><sup>$</sup>4.99</p>
-                            <p class="price-month">Per month</p>
 
                         </div>
 
                         <div class="bottom-part">
 
-                            <ul class="features">
-                                <li><strong>3GB</strong> Storage</li>
-                                <li><strong>10GB</strong> Bandwidth</li>
-                                <li><strong>5</strong> Databases</li>
-                                <li><strong>30</strong> Email Accounts</li>
-                            </ul>
+                            ';
 
-                            <a class="button large" href="">Nov Task</a>
+    $q1 = "SELECT * FROM task WHERE idSprint = {$_GET['idSprint']} AND stanje = 1";
+    $r1 = mysqli_query($dbc, $q1) or trigger_error("Query: $q1\n<br />MySQL Error: " . mysqli_error($dbc));
+
+    while ($row1 = mysqli_fetch_array($r1, MYSQLI_ASSOC)) {
+        echo ' <div class="container">                                                        
+                                                 <a href="/ScrumTable/task.php?idSprint=' . $_GET['idSprint'] . '" title="">' . $row1['naziv'] .  '</a>
+                                                 </div>';
+
+    }
+
+    echo  '
+
+                            <a href="addTask.php?idSprint='.$results['idSprint'].'" class="button large" href="">Nov Task</a>
 
                         </div>
 
@@ -69,22 +71,24 @@ if (isset($_SESSION['ime'])) {
 
                         <div class="top-part">
 
-                            <h3 class="plan-title">Standard</h3>
-                            <p class="plan-price"><sup>$</sup>9.99</p>
-                            <p class="price-month">Per month</p>
+                           
 
                         </div>
 
                         <div class="bottom-part">
+                          
+                                ';
+    $q2 = "SELECT * FROM task WHERE idSprint = {$_GET['idSprint']} AND stanje = 2";
+    $r2 = mysqli_query($dbc, $q2) or trigger_error("Query: $q2\n<br />MySQL Error: " . mysqli_error($dbc));
 
-                            <ul class="features">
-                                <li><strong>5GB</strong> Storage</li>
-                                <li><strong>15GB</strong> Bandwidth</li>
-                                <li><strong>7</strong> Databases</li>
-                                <li><strong>40</strong> Email Accounts</li>
-                            </ul>
+    while ($row2 = mysqli_fetch_array($r2, MYSQLI_ASSOC)) {
+        echo ' <div class="container">                                                        
+                                     <a href="/ScrumTable/task.php?idSprint=' . $_GET['idSprint'] . '" title="">' . $row2['naziv'] . '</a>
+                                     </div>';
 
-                            <a class="button large" href="">prazno</a>
+    }
+
+    echo  '                 
 
                         </div>
 
@@ -98,22 +102,26 @@ if (isset($_SESSION['ime'])) {
 
                         <div class="top-part">
 
-                            <h3 class="plan-title">Premium</h3>
-                            <p class="plan-price"><sup>$</sup>29.99</p>
-                            <p class="price-month">Per month</p>
 
                         </div>
 
                         <div class="bottom-part">
 
-                            <ul class="features">
-                                <li><strong>10GB</strong> Storage</li>
-                                <li><strong>30GB</strong> Bandwidth</li>
-                                <li><strong>15</strong> Databases</li>
-                                <li><strong>60</strong> Email Accounts</li>
-                            </ul>
+                           ';
 
-                            <a class="button large" href="">prazno</a>
+    $q3 = "SELECT * FROM task WHERE idSprint = {$_GET['idSprint']} AND stanje = 3";
+    $r3 = mysqli_query($dbc, $q3) or trigger_error("Query: $q3\n<br />MySQL Error: " . mysqli_error($dbc));
+
+    while ($row3 = mysqli_fetch_array($r3, MYSQLI_ASSOC)) {
+        echo ' <div class="container">                                                        
+                                                                 <a href="/ScrumTable/task.php?idSprint=' . $_GET['idSprint'] . '" title="">' . $row3['naziv'] . '</a>
+                                                                 </div>';
+
+    }
+
+    echo  '
+
+      
 
                         </div>
 
