@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 13. jan 2019 ob 21.52
+-- Čas nastanka: 13. jan 2019 ob 22.23
 -- Različica strežnika: 10.1.37-MariaDB
 -- Različica PHP: 7.2.12
 
@@ -39,8 +39,9 @@ CREATE TABLE `projekt` (
 --
 
 INSERT INTO `projekt` (`idProjekt`, `naziv`, `steviloSprintov`) VALUES
-(23, 'Test', 2),
-(24, 'TEST2', 1);
+(23, 'Test', 3),
+(24, 'TEST2', 1),
+(26, 'ID3 odločitveno drevo - MOS', 1);
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,9 @@ INSERT INTO `sprint` (`idSprint`, `naziv`, `idProjekt`) VALUES
 (15, 'Sprint 1', 23),
 (16, 'Sprint 1', 24),
 (17, 'Sprint 1', 25),
-(18, 'Sprint 2', 23);
+(18, 'Sprint 2', 23),
+(19, 'Sprint 1', 26),
+(20, 'Sprint 3', 23);
 
 -- --------------------------------------------------------
 
@@ -78,20 +81,23 @@ CREATE TABLE `task` (
   `obtezitev` int(11) NOT NULL,
   `stanje` int(3) NOT NULL,
   `datoteka` varchar(100) COLLATE utf8_slovenian_ci DEFAULT NULL,
-  `idSprint` int(11) NOT NULL,
-  `idUporabnik` int(11) DEFAULT NULL
+  `idSprint` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
 
 --
 -- Odloži podatke za tabelo `task`
 --
 
-INSERT INTO `task` (`idTask`, `naziv`, `opis`, `rok_taska`, `obtezitev`, `stanje`, `datoteka`, `idSprint`, `idUporabnik`) VALUES
-(3, 'TESTNI ', 'ZA TEST.', '2019-01-15', 4, 1, NULL, 15, 7),
-(4, 'testni task', 'Test, narejen za testiranje dodeljevanja taska uporabniku.', '2019-01-21', 4, 2, 'Razhroscevanje_2_Uros_Zagoranski.zip', 15, NULL),
-(5, 'Taskec', 'Opis taska', '2019-01-13', 5, 3, 'Preoblikovanje_Uros_Zagoranski.zip', 15, NULL),
-(6, 'Audi A6 Karavan', 'Opis taska 1', '2019-01-13', 8, 3, 'Uros_Zagoranski.zip', 15, NULL),
-(8, 'Mercedes-Benz S Coupe S500D', 'Merđooo', '2019-01-24', 9, 2, NULL, 15, NULL);
+INSERT INTO `task` (`idTask`, `naziv`, `opis`, `rok_taska`, `obtezitev`, `stanje`, `datoteka`, `idSprint`) VALUES
+(3, 'TESTNI ', 'ZA TEST.', '2019-01-31', 4, 1, NULL, 15),
+(4, 'testni task', 'Test, narejen za testiranje dodeljevanja taska uporabniku.', '2019-01-21', 4, 2, 'Razhroscevanje_2_Uros_Zagoranski.zip', 15),
+(5, 'Taskec', 'Opis taska', '2019-01-23', 5, 3, 'Preoblikovanje_Uros_Zagoranski.zip', 15),
+(6, 'Audi A6 Karavan', 'Opis taska 1', '2019-01-25', 8, 3, 'Uros_Zagoranski.zip', 15),
+(9, 'Ogled vodičev', 'Ogled vodičev za izdelavo ID3 odločitvenega drevesa pri predmetu Modeli in odločitveni sistemi.', '2019-02-13', 2, 3, NULL, 19),
+(10, 'Izbira okolja', 'Izbira primernega IDE-ja za izdelavo rešitve. Možnosti: Eclipse, IntelliJ, Visual Studio 2017, PHP Storm', '2019-02-14', 3, 2, NULL, 19),
+(11, 'Vzpostavitev okolja', 'Vzpostavitev izbranega razvojnega okolja za začetek implementacije.', '2019-02-16', 5, 2, NULL, 19),
+(12, 'Izbor knjižnic', 'Izbira knjižnic za pomoč pri izdelavi odločitvenega drevesa.', '2019-02-20', 4, 1, NULL, 19),
+(13, 'Implementacija main-a', 'Implementacija zagonske metode v projektu (metoda main)', '2019-02-22', 7, 1, NULL, 19);
 
 -- --------------------------------------------------------
 
@@ -141,7 +147,8 @@ INSERT INTO `uporabnikhasprojekt` (`idUporabnikHasProjekt`, `idProjekt`, `idUpor
 (32, 23, 9),
 (33, 23, 7),
 (34, 24, 9),
-(36, 23, 14);
+(36, 23, 14),
+(37, 26, 9);
 
 --
 -- Indeksi zavrženih tabel
@@ -190,19 +197,19 @@ ALTER TABLE `uporabnikhasprojekt`
 -- AUTO_INCREMENT tabele `projekt`
 --
 ALTER TABLE `projekt`
-  MODIFY `idProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT tabele `sprint`
 --
 ALTER TABLE `sprint`
-  MODIFY `idSprint` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idSprint` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT tabele `task`
 --
 ALTER TABLE `task`
-  MODIFY `idTask` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idTask` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT tabele `uporabnik`
@@ -214,7 +221,7 @@ ALTER TABLE `uporabnik`
 -- AUTO_INCREMENT tabele `uporabnikhasprojekt`
 --
 ALTER TABLE `uporabnikhasprojekt`
-  MODIFY `idUporabnikHasProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `idUporabnikHasProjekt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

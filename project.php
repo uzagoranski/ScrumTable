@@ -17,7 +17,7 @@ if (isset($_SESSION['ime'])) {
             <div class="row intro-content" >
                 <div class="col-twelve" >
                     <h1 class="animate-intro" > ' . $results['naziv'] . '</h1 >
-                    <h3 class="animate-intro" >Dodajte uporabnike, preglejte sodelujoče ali uredite sprint.</h3 >
+                    <h3 class="animate-intro" >Popoln pregled nad Sprinti in uporabniki.</h3 >
                     <br/>
                 </div > 
             </div > 

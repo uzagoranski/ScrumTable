@@ -22,7 +22,7 @@ require(MYSQL);
                         $idUporabnik = $_SESSION['idUporabnik'];
 
                         echo '<h1>Nov projekt</h1>
-                        <h3 class="animate-intro">Stran za dodajanje novega projekta.</h3><br/>
+                        <h3 class="animate-intro">Dodajanje projekta še nikoli ni bilo lažje.</h3><br/>
 
                     <div class="buttons">
                         <form action="addProject.php" method="post">

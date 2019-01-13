@@ -90,7 +90,7 @@ if (isset($_SESSION['ime'])) {
                             $qt3 = "SELECT datediff(rok_taska, CURDATE()) AS cas FROM task WHERE idTask={$row3['idTask']}";
                             $rt3 = mysqli_query($dbc, $qt3) or trigger_error("Query: $qt3\n<br />MySQL Error: " . mysqli_error($dbc));
 
-                            $preostaliCas3 = mysqli_fetch_array($rt2, MYSQLI_ASSOC);
+                            $preostaliCas3 = mysqli_fetch_array($rt3, MYSQLI_ASSOC);
 
                             echo '<div class="notranji">                                                        
                                         <h3 class="nazivTaska"><span><a class="puscice" href="moveLeft.php?idTask='. $row3['idTask'] .'&idSprint='.$_GET['idSprint'].'">&#171; </a></span>' . $row3['naziv'] . ' <span class="obtezitev">' . $row3['obtezitev'] . '</span></h3>
